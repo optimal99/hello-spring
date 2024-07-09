@@ -9,7 +9,14 @@ import java.util.Optional;
 
 // 서비스의 역할에 맞게 네이밍을 해준다.
 public class MemberService {
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    // Dependency Injection(DI) : 외부에서 Repository를 주입받는다.
+    // MemberRepository를 외부에서 주입받도록 변경.
+    // 이렇게 하면 MemberService 입장에서는 MemberRepository의 구현체가 무엇이든 상관없이 동작할 수 있다.
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     /*
      * 회원 가입

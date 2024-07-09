@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>hello-template</title>
+</head>
+<body>
+  <!-- thymeleaf는 오프라인으로 접속했을 때 기본적으로 껍데기 컨텐츠를 보여준다. hello! empty가 보여진다. -->
+  <p th:text="'hello ' + ${name}">hello! empty</p>
+</body>
+</html>
